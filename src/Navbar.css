@@ -1,0 +1,21 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4rem;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.Navbar-right {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.Navbar h2 {
+  font-weight: 800;
+}
+
+.Navbar-right p {
+  font-weight: 600;
+}
