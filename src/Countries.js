@@ -1,10 +1,13 @@
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { MenuItem, Select, FormControl, InputLabel, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
+import { ThemeContext } from './context/ThemeContext';
 import './Countries.css'
 
 function Countries({ countries }) {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext)
+
   const [showCountries, setShowCountries] = useState(countries)
   const [searchVal, setSearchVal] = useState("")
   const [filterVal, setFilterVal] = useState("")
@@ -21,24 +24,22 @@ function Countries({ countries }) {
     setSearchVal(e.target.value)
     if(e.target.value) {
       setShowCountries(showCountries.filter(country => country.name.common.toLowerCase().includes(e.target.value.toLowerCase())))        
+    } else {
+      setShowCountries(countries)
     }
-    // else {
-    //   setShowCountries(countries)
-    // }
   }
   const handleFilter = (e) => {
     setFilterVal(e.target.value)
     if(e.target.value !== 'All') {
       setShowCountries(showCountries.filter(country => country.region === e.target.value))
     } else if(e.target.value === 'All') {
-        setShowCountries(showCountries.filter(country => country.region === e.target.value))
+        setShowCountries(countries)
       }
   }
   return (
     <div className="Countries-container">
       <div className="Countries-toolbar">
-      <TextField className="Countries-search" 
-      onChange={handleSearch}
+      <TextField className="Countries-search" onChange={handleSearch}
       label={
         <Fragment>
           <SearchIcon />Search for a country...
@@ -52,7 +53,7 @@ function Countries({ countries }) {
           <MenuItem value="Europe">Europe</MenuItem>
           <MenuItem value="Oceania">Oceania</MenuItem>
           <MenuItem value="Antarctic">Antarctic</MenuItem>
-          <MenuItem value="all">All</MenuItem>
+          <MenuItem value="All">All</MenuItem>
         </Select>
       </FormControl>
       </div>

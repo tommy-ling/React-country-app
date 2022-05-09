@@ -1,12 +1,15 @@
 import Switch from './Switch';
 import Navbar from './Navbar';
+import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Switch />
+      <ThemeProvider>
+        <Navbar />
+        <Switch />
+      </ThemeProvider>
     </div>
   );
 }

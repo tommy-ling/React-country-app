@@ -10,6 +10,7 @@
 .Navbar-right {
   display: flex;
   padding-top: 1rem;
+  cursor: pointer;
 }
 
 .Navbar h2 {

@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { ThemeContext } from "./context/ThemeContext";
 import './Country.css'
 
 function Country({ countries }) {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext)
+
   const { name } = useParams()
   const country = countries.filter(country => country.name.common === name)[0]
   const navigate = useNavigate()
