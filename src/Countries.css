@@ -1,3 +1,10 @@
+.Countries-background {
+  background-color: #F5F5F5
+}
+.Countries-background-dk {
+  background-color: #282c34
+}
+
 .Countries-container {
   margin: 0 4rem;
 }
@@ -8,12 +15,12 @@
 }
 
 .Countries-toolbar {
-  margin-top: 2rem;
+  padding-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+/* Below is Material UI */
 .Countries-select {
   width: 10rem;
   background-color: white;
@@ -29,6 +36,7 @@
   cursor: pointer;
   color: black
 }
+/* Above is Material UI */
 
 .card {
   border: none;
@@ -36,6 +44,14 @@
   box-shadow: 0px 5px 10px 0px #e6e6e6;
   height: 340px;
   width: 21.25%
+}
+.card-dk {
+  border: none;
+  border-radius: 5px;
+  height: 340px;
+  width: 21.25%;
+  background-color: #303444;
+  color: white
 }
 
 .card-img-top {
