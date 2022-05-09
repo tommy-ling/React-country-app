@@ -1,43 +1,40 @@
-.Countries-background {
-  background-color: #F5F5F5
+.Countries-bg {
+  background-color: #F5F5F5;
+  min-height: 90vh;
 }
-.Countries-background-dk {
-  background-color: #282c34
+.Countries-bg-dk {
+  background-color: #282c34;
+  min-height: 90vh;
 }
-
 .Countries-container {
   margin: 0 4rem;
 }
-
-.Countries {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .Countries-toolbar {
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-/* Below is Material UI */
-.Countries-select {
-  width: 10rem;
-  background-color: white;
+.Countries {
+  display: flex;
+  flex-wrap: wrap;
 }
-
-.Countries-search {
-  background-color: white;
-  width: 30rem
-}
-
 .Country-link {
   text-decoration: none;
   cursor: pointer;
   color: black
 }
-/* Above is Material UI */
-
+.Country-link:hover {
+  color: gray
+}
+.Country-link-dk {
+  text-decoration: none;
+  cursor: pointer;
+  color: white
+}
+.Country-link-dk:hover {
+  color: lightgray
+}
 .card {
   border: none;
   border-radius: 5px;
@@ -50,19 +47,16 @@
   border-radius: 5px;
   height: 340px;
   width: 21.25%;
-  background-color: #303444;
+  background-color: #3e4355;
   color: white
 }
-
 .card-img-top {
   width: 100%; 
   height: 50%
 }
-
-.card-body p {
-  margin-bottom: 0
-}
-
 .card-title, .card-body span {
   font-weight: 800;
+}
+.card-body p {
+  margin-bottom: 0
 }

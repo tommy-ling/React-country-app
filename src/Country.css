@@ -1,36 +1,58 @@
-.Country-info {
-  margin: 3rem 4rem;
-  display: flex;
-  justify-content: space-between;
+.Country-bg {
+  height: 90vh;
+  background-color: #F5F5F5
 }
-
-.Country-btn {
+.Country-bg-dk {
+  height: 90vh;
+  background-color: #282c34;
+  color: white
+}
+.Country-btn, .Country-btn-dk:hover {
   margin: 3rem 4rem 0 4rem;
   border: none;
   box-shadow: 0px 0px 15px -5px #6E6E6E;
   background-color: white;
   border-radius: 5px;
-  padding: 10px 30px
+  padding: 10px 30px;
+  color: black
 }
-
-.BorderCountry-link {
+.Country-btn-dk, .Country-btn:hover {
+  margin: 3rem 4rem 0 4rem;
+  border: none;
+  background-color: #3e4355;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: white
+}
+.Country-info {
+  margin: 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.Country-details {
+  display: flex;
+  flex-direction: column;
+}
+.Country-details-mid {
+  display: flex
+}
+.Country-details h3, .Country-details span {
+  font-weight: 800;
+}
+.BorderCountry-link, .BorderCountry-link-dk:hover {
   border: none;
   box-shadow: 0px 0px 15px -5px #6E6E6E;
   background-color: white;
   border-radius: 5px;
   padding: 0 20px;
   margin: 10px 10px 0 0;
+  color: black
 }
-
-.Country-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.Country-details-mid {
-  display: flex
-}
-
-.Country-details h3, .Country-details span {
-  font-weight: 800;
+.BorderCountry-link-dk, .BorderCountry-link:hover {
+  border: none;
+  background-color: #3e4355;
+  border-radius: 5px;
+  padding: 0 20px;
+  margin: 10px 10px 0 0;
+  color: white
 }

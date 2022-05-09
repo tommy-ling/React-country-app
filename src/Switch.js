@@ -10,7 +10,6 @@ function Switch() {
     async function fetData() {
       const res = await axios.get('https://restcountries.com/v3/all?fields=name,population,region,subregion,capital,currencies,languages,borders,flags,tld,cca3')
       const { data } = res
-      console.log(data)
       setCountries(data)
     }
     fetData()

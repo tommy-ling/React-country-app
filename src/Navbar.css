@@ -1,29 +1,25 @@
 .Navbar-bg-dk {
-  background-color: #303444;
+  background-color: #3e4355;
   color: white;
   border: none
 }
 .Navbar-bg {
   border-bottom: 1px solid lightgray;
 }
-
 .Navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 4rem;
 }
-
 .Navbar-right {
   display: flex;
   padding-top: 1rem;
   cursor: pointer;
 }
-
 .Navbar h2 {
   font-weight: 800;
 }
-
 .Navbar-right p {
   font-weight: 600;
 }

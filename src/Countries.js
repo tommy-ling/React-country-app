@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import { MenuItem, Select, FormControl, InputLabel, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeContext } from './context/ThemeContext';
+import { selectStyle, searchStyle, selectStyleDk, searchStyleDk } from './style/MuiStyle';
 import './Countries.css'
 
 function Countries({ countries }) {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext)
+  const { isDarkMode } = useContext(ThemeContext)
 
   const [showCountries, setShowCountries] = useState(countries)
   const [searchVal, setSearchVal] = useState("")
@@ -37,17 +38,19 @@ function Countries({ countries }) {
       }
   }
   return (
-    <div className={isDarkMode ? 'Countries-background-dk' : 'Countries-background'}>
+    <div className={isDarkMode ? 'Countries-bg-dk' : 'Countries-bg'}>
       <div className="Countries-container">
         <div className="Countries-toolbar">
-          <TextField className='Countries-search' onChange={handleSearch}
-            label={
-              <Fragment>
-                <SearchIcon />Search for a country...
-              </Fragment>} />
-          <FormControl className='Countries-select'>
-            <InputLabel>Filter by Region</InputLabel>
-            <Select label="filter-by-region" value={filterVal} onChange={handleFilter}>
+          <TextField 
+            sx={isDarkMode ? {...searchStyleDk} : {...searchStyle}}
+            onChange={handleSearch}
+            label={searchVal ? "" : <Fragment><SearchIcon />Search for a country...</Fragment>}
+            InputLabelProps={{shrink: false, style: {color: 'gray'}}}/>
+          <FormControl className='Countries-select' >
+            <InputLabel shrink={false} style={{color: 'gray'}}>
+              {filterVal ? "" : "Filter by Region"}
+            </InputLabel>
+            <Select value={filterVal} onChange={handleFilter} sx={isDarkMode ? {...selectStyleDk} : {...selectStyle}}>
               <MenuItem value="Africa">Africa</MenuItem>
               <MenuItem value="Americas">Americas</MenuItem>
               <MenuItem value="Asia">Asia</MenuItem>
@@ -65,7 +68,7 @@ function Countries({ countries }) {
             style={showCountries.indexOf(country) % 4 !== 3 ? {margin: '2rem 5% 2rem 0'} : {margin: '2rem 0'}}>
               <img className="card-img-top" src={country.flags[1]} alt="Card image cap" />
               <div className="card-body">
-                <Link className="Country-link" to={`/country/${country.name.common}`}>
+                <Link className={isDarkMode ? 'Country-link-dk' : 'Country-link'} to={`/country/${country.name.common}`}>
                 <h5 className='card-title'>{country.name.common}</h5>
                 </Link>
                 <p><span>Population: </span>{country.population.toLocaleString()}</p>
