@@ -7,7 +7,9 @@
   min-height: 90vh;
 }
 .Countries-container {
-  margin: 0 4rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  max-width: 1440px;
 }
 .Countries-toolbar {
   padding-top: 2rem;
