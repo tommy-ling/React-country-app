@@ -1,9 +1,9 @@
 import { Fragment, useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
-import { MenuItem, Select, FormControl, InputLabel, TextField } from '@mui/material'
+import { MenuItem, Select, FormControl, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeContext } from './context/ThemeContext';
-import { selectStyle, searchStyle, selectStyleDk, searchStyleDk } from './style/MuiStyle';
+import { selectStyle, searchStyle, selectStyleDk, searchStyleDk, MenuItemStyleDk, MenuListStyle, MenuItemSelected } from './style/MuiStyle';
 import './Countries.css'
 
 function Countries({ countries }) {
@@ -41,19 +41,23 @@ function Countries({ countries }) {
             onChange={handleChange}
             sx={isDarkMode ? {...searchStyleDk} : {...searchStyle}}
             label={searchVal ? "" : <Fragment><SearchIcon />Search for a country...</Fragment>}
-            InputLabelProps={{shrink: false, style: {color: 'gray'}}}/>
+            InputLabelProps={{shrink: false, style: isDarkMode ? {color: 'white'} : {color: 'gray'}}}
+            InputProps={{style: isDarkMode ? {color: 'white'} : {color: 'black'}}}/>
           <FormControl>
             <Select 
               value={filterVal} 
-              onChange={handleFilter} 
+              onChange={handleFilter}
+              MenuProps={{
+                sx: isDarkMode && {...MenuItemSelected},
+                PaperProps: {sx:{...MenuListStyle}}}}
               sx={isDarkMode ? {...selectStyleDk} : {...selectStyle}}>
-              <MenuItem value="Africa">Africa</MenuItem>
-              <MenuItem value="Americas">Americas</MenuItem>
-              <MenuItem value="Asia">Asia</MenuItem>
-              <MenuItem value="Europe">Europe</MenuItem>
-              <MenuItem value="Oceania">Oceania</MenuItem>
-              <MenuItem value="Antarctic">Antarctic</MenuItem>
-              <MenuItem value="All">All</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Africa">Africa</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Americas">Americas</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Asia">Asia</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Europe">Europe</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Oceania">Oceania</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="Antarctic">Antarctic</MenuItem>
+              <MenuItem sx={isDarkMode && {...MenuItemStyleDk}} value="All">All</MenuItem>
             </Select>
           </FormControl>
         </div>
