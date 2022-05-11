@@ -51,7 +51,7 @@
 .Country-details-mid-right {
   width: 50%
 }
-.Country-details h3, .Country-details p {
+.Country-details h3, .Country-details span {
   font-weight: 800;
 }
 .Country-details-borders {
@@ -79,6 +79,44 @@
   margin: 10px 10px 0 10px;
   color: white
 }
+.Country-details-borders-btn {
+  padding-bottom: 2rem
+}
 .Country-details-borders-btn > p {
   margin: 10px 0 0 10px
+}
+
+@media(max-width: 500px) {
+  .Country-container {
+    padding: 0 2rem
+  }
+  .Country-info, .Country-details, .Country-details-mid, .Country-details-borders {
+    display: block
+  }
+  .Country-flag img {
+    width: 100%;
+  }
+  .Country-details {
+    margin-top: 2rem
+  }
+  .Country-flag, .Country-details, .Country-details-mid, .Country-details-mid-left, .Country-details-mid-right {
+    width: 100%
+  }
+  .Country-details-borders-btn {
+    padding: 0 0 2.5rem 0;
+  }
+  .BorderCountry-link,  .BorderCountry-link:hover, .BorderCountry-link-dk, .BorderCountry-link-dk:hover {
+    margin: 10px 10px 0 0
+  }
+}
+
+@media(min-width: 501px) and (max-width: 670px) {
+  .Country-container {
+    padding: 0 1rem
+  }
+}
+@media(min-width: 671px) and (max-width: 740px) {
+  .Country-container {
+    padding: 0 2rem
+  }
 }

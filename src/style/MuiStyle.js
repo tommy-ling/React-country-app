@@ -13,7 +13,7 @@ export const searchStyle={
 export const selectStyle={
   backgroundColor: 'white',
   width: 160,
-  marginTop: {xs: 4, md: 0},
+  marginTop: {xs: 4, sm: 0, md: 0},
   height: {xs: 45, md: 55},
   boxShadow: '0px 0px 10px 5px #E6E6E6',
   "& .MuiOutlinedInput-notchedOutline": {
@@ -34,7 +34,7 @@ export const searchStyleDk={
 export const selectStyleDk={
   backgroundColor: 'white',
   width: 160,
-  marginTop: {xs: 4, md: 0},
+  marginTop: {xs: 4, sm:0, md: 0},
   height: {xs: 45, md: 55},
   "& .MuiOutlinedInput-notchedOutline": {
     border: "0 none"

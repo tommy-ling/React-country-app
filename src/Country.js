@@ -51,7 +51,7 @@ function Country({ countries }) {
               </div>
             </div>
             <div className="Country-details-borders">
-              <div className="Country-details-borders-title"><p>Border Countries: </p></div>
+              <div className="Country-details-borders-title"><span>Border Countries: </span></div>
               <div className="Country-details-borders-btn">
                 {country.borders[0] ? 
                 borderCountries.map(borderCountry => (

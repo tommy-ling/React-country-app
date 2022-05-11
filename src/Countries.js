@@ -42,10 +42,7 @@ function Countries({ countries }) {
             sx={isDarkMode ? {...searchStyleDk} : {...searchStyle}}
             label={searchVal ? "" : <Fragment><SearchIcon />Search for a country...</Fragment>}
             InputLabelProps={{shrink: false, style: {color: 'gray'}}}/>
-          <FormControl className='Countries-select' >
-            <InputLabel shrink={false} style={{color: 'gray'}}>
-              {filterVal ? "" : "Filter by Region"}
-            </InputLabel>
+          <FormControl>
             <Select 
               value={filterVal} 
               onChange={handleFilter} 
