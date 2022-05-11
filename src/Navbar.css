@@ -14,14 +14,48 @@
   padding: 0.5rem 4rem;
   max-width: 1440px;
 }
+.Nav-link {
+  text-decoration: none;
+  color: #44474a
+}
+.Nav-link:hover {
+  color: gray
+}
+.Nav-link-dk {
+  text-decoration: none;
+  color: white
+}
+.Nav-link-dk:hover {
+  color: lightgray
+}
 .Navbar-right {
   display: flex;
-  padding-top: 1rem;
+  align-items: center;
   cursor: pointer;
+}
+.Nav-icon {
+  margin-right: 0.3rem;
 }
 .Navbar h2 {
   font-weight: 800;
+  padding-top: 0.5rem;
 }
-.Navbar-right p {
+.Navbar-right span {
   font-weight: 600;
+}
+
+@media(max-width: 478px) {
+  .Navbar {
+    padding: 0.5rem 1rem
+  }
+  .Navbar h2 {
+    font-size: large;
+  }
+  .Navbar span {
+    font-size: small;
+  }
+  .Nav-icon {
+    transform: scale(0.7);
+    margin-right: 0;
+  }
 }

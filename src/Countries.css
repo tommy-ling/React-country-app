@@ -20,10 +20,14 @@
 .Countries {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Countries::after {
+  content: "";
+  width: 630px
 }
 .Country-link {
   text-decoration: none;
-  cursor: pointer;
   color: black
 }
 .Country-link:hover {
@@ -31,7 +35,6 @@
 }
 .Country-link-dk {
   text-decoration: none;
-  cursor: pointer;
   color: white
 }
 .Country-link-dk:hover {
@@ -42,15 +45,17 @@
   border-radius: 5px;
   box-shadow: 0px 5px 10px 0px #e6e6e6;
   height: 340px;
-  width: 21.25%
+  width: 278px;
+  margin: 2rem 0
 }
 .card-dk {
   border: none;
   border-radius: 5px;
   height: 340px;
-  width: 21.25%;
+  width: 278px;
   background-color: #3e4355;
-  color: white
+  color: white;
+  margin: 2rem 0
 }
 .card-img-top {
   width: 100%; 
@@ -61,4 +66,21 @@
 }
 .card-body p {
   margin-bottom: 0
+}
+
+@media(max-width: 478px) {
+  .Countries-container {
+    padding: 0 1rem;
+  }
+  .Countries-toolbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .Countries {
+    display: block;
+    padding-bottom: 2rem;
+  }
+  .card, .card-dk {
+    margin: 2rem auto
+  }
 }

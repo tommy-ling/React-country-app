@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import DarkModeIcon from '@mui/icons-material/DarkModeOutlined'
 import { ThemeContext } from './context/ThemeContext'
 import './Navbar.css'
@@ -8,10 +9,12 @@ function Navbar(props) {
   return (
     <div className={isDarkMode ? 'Navbar-bg-dk' : "Navbar-bg"}>
       <div className='Navbar'>
-        <h2>Where in the world?</h2>
+        <Link className={isDarkMode ? "Nav-link-dk" : "Nav-link"} to='/'>
+          <h2>Where in the world?</h2>
+        </Link>
         <div className='Navbar-right' onClick={toggleTheme}>
-          <DarkModeIcon style={{marginRight: '0.3rem'}}/>
-          <p>Dark Mode</p>
+          <DarkModeIcon className="Nav-icon"/>
+          <span>Dark Mode</span>
         </div>
       </div>
     </div>

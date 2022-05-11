@@ -65,7 +65,7 @@ function Countries({ countries }) {
             <div 
             className={isDarkMode ? "card-dk" : "card"}
             key={country.name.common}
-            style={filteredCountries.indexOf(country) % 4 !== 3 ? {margin: '2rem 5% 2rem 0'} : {margin: '2rem 0'}}>
+            >
               <img className="card-img-top" src={country.flags[1]} alt="Card image cap" />
               <div className="card-body">
                 <Link className={isDarkMode ? 'Country-link-dk' : 'Country-link'} to={`/country/${country.name.common}`}>
