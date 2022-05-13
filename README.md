@@ -1,3 +1,10 @@
+# Getting started 
+Run 'npm start' to start
+
+![Alt text](gif1.gif)
+![Alt text](gif2.gif)
+![Alt text](gif3.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
