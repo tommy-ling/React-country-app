@@ -7,8 +7,12 @@ import './Country.css'
 function Country({ countries }) {
   const { isDarkMode } = useContext(ThemeContext)
   const { name } = useParams()
-  const country = countries.filter(country => country.name.common === name)[0]
   const navigate = useNavigate()
+  if(!countries.length) {
+    return null
+  }
+  const country = countries.filter(country => country.name.common === name)[0]
+
 
   const borderCountries = 
   country.borders
