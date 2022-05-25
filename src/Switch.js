@@ -8,7 +8,7 @@ function Switch() {
   const [countries, setCountries] = useState([])
   useEffect(() => {
     async function fetData() {
-      const res = await axios.get('https://restcountries.com/v3/all?fields=name,population,region,subregion,capital,currencies,languages,borders,flags,tld,cca3')
+      const res = await axios.get('http://localhost:3001')
       const { data } = res
       setCountries(data)
     }
